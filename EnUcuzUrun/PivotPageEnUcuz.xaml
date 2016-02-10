@@ -1,0 +1,243 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="EnUcuzUrun.PivotPageEnUcuz"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <phone:Pivot Title="EN UCUZ ÜRÜN" SelectionChanged="Pivot_SelectionChanged">
+            <!--Pivot item one-->
+            <phone:PivotItem Header="ANA SAYFA">
+                <Grid>
+                    <TextBlock x:Name="txtAd" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="1.5,-2.759" Text="" Foreground="#FF0DF102"/>
+                    <TextBlock  HorizontalAlignment="Center" Margin="0,27,0,0" TextWrapping="Wrap" Text="izmit" VerticalAlignment="Top" FontSize="35" Foreground="Red"></TextBlock>
+                    <TextBlock x:Name="txtMahalle" HorizontalAlignment="Center" Margin="0,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Foreground="Azure"></TextBlock>
+                    <TextBlock  HorizontalAlignment="Left" Margin="20,120,0,0" TextWrapping="Wrap" Text="Takip EdilenÜrünler" VerticalAlignment="Top" FontSize="20" Foreground="#FF4CF3F3"/>
+
+                    <ListBox x:Name="lstKullanici"  Margin="10,180,10,10" Height="Auto" SelectionChanged="lstKullanici_SelectionChanged" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <!--vertical: alt alta-->
+                                <StackPanel Width="470" Margin="5,20,5,20" Background="AliceBlue" Orientation="Horizontal">
+                                    <StackPanel Background="Azure" Orientation="Vertical">
+                                        <TextBlock  Foreground="Red" Text="{Binding Barkod}" Width="150" Margin="10,10,10,10"></TextBlock>
+                                        <TextBlock Foreground="Red" Text="{Binding UrunAd}" Width="150" Margin="10,10,10,10"></TextBlock>
+                                        <TextBlock Foreground="Red" Text="{Binding MarketAdi}" Width="150" Margin="10,10,10,10"></TextBlock>
+                                        <TextBlock Foreground="Red" Text="{Binding EnUcuzFiyat}" Width="150" Margin="10,10,10,10"> TL</TextBlock>
+                                   
+                                    </StackPanel>
+                                    <Image Stretch="Fill"  Source="{Binding UrunResim}" Width="150" Height="150" Margin="80,10,10,10" ></Image>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+            <phone:PivotItem Header="MARKETLER">
+                <Grid>
+                    <ListBox x:Name="lstMarketlerim" Margin="0,40,0,10" Height="auto" SelectionChanged="lstMarketlerim_SelectionChanged" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding MarketAdi}"></TextBlock>
+                                    <TextBlock Text="{Binding MahalleAdi}"></TextBlock>
+                                    <TextBlock Text="{Binding Adres}"></TextBlock>
+                                    <TextBlock Text="****************"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </phone:PivotItem>
+
+            <!--Pivot item three-->
+            <phone:PivotItem Header="SEPETİM">
+                <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" Height="auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="220" />
+                        <ColumnDefinition Width="220" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Mahalle" Grid.Row="0" Grid.Column="0" Margin="0,0,0,0" />
+                    <TextBlock Text="Market" Grid.Row="0" Grid.Column="1" Margin="0,0,0,0" />
+
+                    <toolkit:ListPicker Grid.Row="1" Grid.Column="0" x:Name="lpkMahalle" Width="190" ItemsSource="{Binding MahalleAdi}" Margin="0,0,0,0" SelectionChanged="lpkMahalle_SelectionChanged">
+                        <toolkit:ListPicker.FullModeItemTemplate>
+                            <DataTemplate>
+                                <TextBlock  Text="{Binding MahalleAdi}" FontSize="20"  Foreground="Blue"  TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </toolkit:ListPicker.FullModeItemTemplate>
+                        <toolkit:ListPicker.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock  Text="{Binding MahalleAdi}" FontSize="20"  Foreground="Red"  TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </toolkit:ListPicker.ItemTemplate>
+                    </toolkit:ListPicker>
+
+                    <toolkit:ListPicker Grid.Row="1" Grid.Column="1" x:Name="lpkMarket" Width="190" ItemsSource="{Binding MarketAdi}" Margin="0,0,0,0" SelectionChanged="lpkMarket_SelectionChanged">
+                        <toolkit:ListPicker.FullModeItemTemplate>
+                            <DataTemplate>
+                                <TextBlock  Text="{Binding MarketAdi}" FontSize="20"  Foreground="Blue"  TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </toolkit:ListPicker.FullModeItemTemplate>
+                        <toolkit:ListPicker.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock  Text="{Binding MarketAdi}" FontSize="20"  Foreground="Red"  TextWrapping="Wrap" />
+                            </DataTemplate>
+                        </toolkit:ListPicker.ItemTemplate>
+                    </toolkit:ListPicker>
+
+                    <TextBlock Text="Market Ürünleri" Grid.Row="2" Grid.Column="0" Margin="0,10,0,0" />
+                    <TextBlock Text="Yeni Sepetim" Grid.Row="2" Grid.Column="1" Margin="0,10,0,0" />
+
+                    <ListBox x:Name="lstSepetimUrunler"  Grid.Row="3" Grid.Column="0"  Margin="0,20,10,20" Height="150" SelectionChanged="lstSepetimUrunler_SelectionChanged" SelectionMode="Single" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Margin="0,0,0,0" Text="{Binding UrunAd}"></TextBlock>
+                                    <TextBlock Margin="0,0,0,0" Text="{Binding Fiyat}" ></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <ListBox x:Name="lstSepetimUrunlerSecilen" Grid.Column="1"  Grid.Row="3"  Margin="10,20,0,20" Height="150" SelectionChanged="lstSepetimUrunlerSecilen_SelectionChanged" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Margin="0,0,0,0" Text="{Binding UrunAd}"></TextBlock>
+                                    <TextBlock Margin="0,0,0,0" Text="{Binding Fiyat}" ></TextBlock>
+                                    <TextBlock Text="****************"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <ListBox x:Name="lstEnUcuz" Grid.Column="1"  Grid.Row="5"  Margin="10,20,0,20" Height="150" SelectionChanged="lstEnUcuz_SelectionChanged"  >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Margin="0,0,0,0" Text="{Binding UrunAd}"></TextBlock>
+                                    <TextBlock Margin="0,0,0,0" Text="{Binding MarketAdi}"></TextBlock>
+                                    <TextBlock Margin="0,0,0,0" Text="{Binding MahalleAdi}"></TextBlock>
+                                    <TextBlock Margin="0,0,0,0" Text="{Binding EnUcuzFiyat}" ></TextBlock>
+                                    <TextBlock Text="****************"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <Button Content="TEMİZLE" Grid.Row="5" Grid.Column="0" Height="72" HorizontalAlignment="Center" Name="btnUcuzCikis"  VerticalAlignment="Top" Width="150"  Margin="0,100,39,0" RenderTransformOrigin="0.133,0.535" Click="btnUcuzCikis_Click"  />
+                    <Button Content="EN UCUZ" Grid.Row="5" Grid.Column="0" Height="72" HorizontalAlignment="Center" Name="btnEnUcuzGor"  VerticalAlignment="Top" Width="150"  Margin="0,7,39,0" RenderTransformOrigin="0.133,0.535" Click="btnEnUcuzGor_Click" />
+                    <TextBlock Visibility="Collapsed" Text="" x:Name="txbFiyatToplam" Grid.Row="4"  Margin="5,30,5,0" Grid.ColumnSpan="2" FontSize="20" Foreground="Red" />
+
+                </Grid>
+            </phone:PivotItem>
+
+            <!--Pivot item four-->
+            <phone:PivotItem Header="PROFİLİM">
+                <Grid  Margin="12,0,12,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="PAYLAŞIMLARIM" Grid.Column="0" Grid.Row="0"></TextBlock>
+
+                    <toolkit:PhoneTextBox InputScope="Number" Visibility="Collapsed" x:Name="txtYeniFiyat" Hint="Yeni Fiyat" Margin="-10,0,0,10" Grid.Column="0" Grid.Row="1"></toolkit:PhoneTextBox>
+                    <Button Visibility="Collapsed" x:Name="btnGuncelleFiyat" Content="Güncelle" Margin="-10,0,0,10" Grid.Column="1" Grid.Row="1" Click="btnGuncelleFiyat_Click"></Button>
+
+                    <ListBox x:Name="lstUrunlerim" Margin="0,40,0,10" Height="auto" Grid.Column="0" Grid.Row="2" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding BarkodId}"></TextBlock>
+                                    <TextBlock Text="{Binding UrunAd}"></TextBlock>
+                                    <TextBlock Text="{Binding MarketAdi}"></TextBlock>
+                                    <TextBlock Text="{Binding Fiyat}"></TextBlock>
+                                    <TextBlock Text="{Binding Tarih}"></TextBlock>
+                                    <TextBlock Text="****************"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <TextBlock Text="MARKETLERİM" Grid.Column="1" Grid.Row="0"></TextBlock>
+
+                    <ListBox x:Name="lstMarketlerimProfil" Margin="0,40,0,10" Height="auto" Grid.Column="1" Grid.Row="2" SelectionChanged="lstMarketlerimProfil_SelectionChanged" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding MarketAdi}"></TextBlock>
+                                    <TextBlock Text="{Binding MahalleAdi}"></TextBlock>
+                                    <TextBlock Text="{Binding Adres}"></TextBlock>
+                                    <TextBlock Text="****************"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>
+    </Grid>
+
+    <phone:PhoneApplicationPage.Resources>
+        <shell:ApplicationBar x:Key="AppBar1" IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Assets/feature.camera.png" Text="Barkod Okut" Click="Kamera_Click" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Arama" Click="ApplicationBarMenuItem_Click"  />
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+
+        <shell:ApplicationBar x:Key="AppBar2" IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Assets/add.png" Text="Sepete Ekle" x:Name="btnSepeteEkle" Click="btnSepeteEkle_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/cancel.png" Text="Çıkar" x:Name="btnSepettenÇıkar" Click="btnSepettenÇıkar_Click"  />
+            <shell:ApplicationBarIconButton IconUri="/Assets/feature.camera.png" Text="Barkod Okut" Click="Kamera_Click" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Arama" Click="ApplicationBarMenuItem_Click"  />
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+
+        <shell:ApplicationBar x:Key="AppBarProfilim" IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Assets/cancel.png" Text="Paylaşım Sil" x:Name="btnPaylasimSil" Click="btnPaylasimSil_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/edit.png" Text="Paylaşım Güncelle" x:Name="btnPaylasimGuncel" Click="btnPaylasimGuncel_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/next.png" Text="Paylaşıma Git" x:Name="btnPaylasimaGit" Click="btnPaylasimaGit_Click"  />
+            <shell:ApplicationBarIconButton IconUri="/Assets/feature.camera.png" Text="Barkod Okut" Click="Kamera_Click" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Arama" Click="ApplicationBarMenuItem_Click"  />
+                <shell:ApplicationBarMenuItem Text="Profil Güncelle" Click="ApplicationBarMenuItem_Click_1"   />
+                <shell:ApplicationBarMenuItem Text="Çıkış" Click="ApplicationBarMenuItem_Click_2"></shell:ApplicationBarMenuItem>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+        
+    </phone:PhoneApplicationPage.Resources>
+    
+</phone:PhoneApplicationPage>

@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="veritabaniEnucuzUrunModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="IzmitMahalle">
+    <Key>
+      <PropertyRef Name="MahalleId" />
+    </Key>
+    <Property Name="MahalleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MahalleAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kullanicilar">
+    <Key>
+      <PropertyRef Name="KullaniciId" />
+    </Key>
+    <Property Name="KullaniciId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ad" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Parola" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Onay" Type="Boolean" Nullable="false" />
+    <Property Name="Sayi" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MahalleId" Type="Int32" Nullable="false" />
+    <Property Name="KullaniciResim" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Marketler">
+    <Key>
+      <PropertyRef Name="MarketId" />
+    </Key>
+    <Property Name="MarketId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MarketAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MahalleId" Type="Int32" Nullable="false" />
+    <Property Name="Adres" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MarketEkleyen" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Paylasimlar">
+    <Key>
+      <PropertyRef Name="PaylasimId" />
+    </Key>
+    <Property Name="PaylasimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BarkodId" Type="Int32" Nullable="false" />
+    <Property Name="KullaniciId" Type="Int32" Nullable="false" />
+    <Property Name="MarketId" Type="Int32" Nullable="false" />
+    <Property Name="Fiyat" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Urunler">
+    <Key>
+      <PropertyRef Name="BarkodId" />
+    </Key>
+    <Property Name="BarkodId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Barkod" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UrunAd" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UrunIlkEkleyen" Type="Int32" Nullable="false" />
+    <Property Name="EnUcuzFiyat" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="MarketId" Type="Int32" Nullable="false" />
+    <Property Name="BarkodTur" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UrunResim" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UrunTakip">
+    <Key>
+      <PropertyRef Name="TakipId" />
+    </Key>
+    <Property Name="TakipId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciId" Type="Int32" Nullable="false" />
+    <Property Name="BarkodId" Type="Int32" Nullable="false" />
+    <Property Name="Takip" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Yorumlar">
+    <Key>
+      <PropertyRef Name="YorumId" />
+    </Key>
+    <Property Name="YorumId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BarkodId" Type="Int32" Nullable="false" />
+    <Property Name="Yorum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="KullaniciId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_AnasayfaUrunTakipListe">
+    <Key>
+      <PropertyRef Name="BarkodId" />
+      <PropertyRef Name="KullaniciId" />
+      <PropertyRef Name="Takip" />
+      <PropertyRef Name="TakipId" />
+      <PropertyRef Name="Barkod" />
+      <PropertyRef Name="EnUcuzFiyat" />
+      <PropertyRef Name="UrunAd" />
+      <PropertyRef Name="UrunIlkEkleyen" />
+      <PropertyRef Name="UrunResim" />
+      <PropertyRef Name="MarketId" />
+      <PropertyRef Name="MarketAdi" />
+    </Key>
+    <Property Name="BarkodId" Type="Int32" Nullable="false" />
+    <Property Name="KullaniciId" Type="Int32" Nullable="false" />
+    <Property Name="Takip" Type="Boolean" Nullable="false" />
+    <Property Name="TakipId" Type="Int32" Nullable="false" />
+    <Property Name="Barkod" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EnUcuzFiyat" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="UrunAd" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UrunIlkEkleyen" Type="Int32" Nullable="false" />
+    <Property Name="UrunResim" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MarketId" Type="Int32" Nullable="false" />
+    <Property Name="MarketAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_KullaniciBilgi">
+    <Key>
+      <PropertyRef Name="Ad" />
+      <PropertyRef Name="KullaniciId" />
+      <PropertyRef Name="MahalleId" />
+      <PropertyRef Name="KullaniciResim" />
+      <PropertyRef Name="MahalleAdi" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="Onay" />
+    </Key>
+    <Property Name="Ad" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KullaniciId" Type="Int32" Nullable="false" />
+    <Property Name="MahalleId" Type="Int32" Nullable="false" />
+    <Property Name="KullaniciResim" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MahalleAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Onay" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_Marketler">
+    <Key>
+      <PropertyRef Name="MahalleAdi" />
+      <PropertyRef Name="MarketId" />
+      <PropertyRef Name="MarketAdi" />
+      <PropertyRef Name="MahalleId" />
+      <PropertyRef Name="Adres" />
+      <PropertyRef Name="MarketEkleyen" />
+    </Key>
+    <Property Name="MahalleAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MarketId" Type="Int32" Nullable="false" />
+    <Property Name="MarketAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MahalleId" Type="Int32" Nullable="false" />
+    <Property Name="Adres" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MarketEkleyen" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_MarketUrunleri">
+    <Key>
+      <PropertyRef Name="MarketAdi" />
+      <PropertyRef Name="UrunAd" />
+      <PropertyRef Name="PaylasimId" />
+      <PropertyRef Name="BarkodId" />
+      <PropertyRef Name="KullaniciId" />
+      <PropertyRef Name="MarketId" />
+      <PropertyRef Name="Fiyat" />
+      <PropertyRef Name="Tarih" />
+      <PropertyRef Name="Barkod" />
+      <PropertyRef Name="UrunResim" />
+    </Key>
+    <Property Name="MarketAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UrunAd" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PaylasimId" Type="Int32" Nullable="false" />
+    <Property Name="BarkodId" Type="Int32" Nullable="false" />
+    <Property Name="KullaniciId" Type="Int32" Nullable="false" />
+    <Property Name="MarketId" Type="Int32" Nullable="false" />
+    <Property Name="Fiyat" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Barkod" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UrunResim" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_UrunlerMarketMahalle">
+    <Key>
+      <PropertyRef Name="BarkodId" />
+      <PropertyRef Name="UrunAd" />
+      <PropertyRef Name="UrunIlkEkleyen" />
+      <PropertyRef Name="EnUcuzFiyat" />
+      <PropertyRef Name="MarketId" />
+      <PropertyRef Name="MarketAdi" />
+      <PropertyRef Name="MahalleAdi" />
+      <PropertyRef Name="MahalleId" />
+      <PropertyRef Name="Barkod" />
+      <PropertyRef Name="UrunResim" />
+    </Key>
+    <Property Name="BarkodId" Type="Int32" Nullable="false" />
+    <Property Name="UrunAd" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UrunIlkEkleyen" Type="Int32" Nullable="false" />
+    <Property Name="EnUcuzFiyat" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="MarketId" Type="Int32" Nullable="false" />
+    <Property Name="MarketAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MahalleAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MahalleId" Type="Int32" Nullable="false" />
+    <Property Name="Barkod" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UrunResim" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_UrunMalumat">
+    <Key>
+      <PropertyRef Name="UrunAd" />
+      <PropertyRef Name="MarketAdi" />
+      <PropertyRef Name="Ad" />
+      <PropertyRef Name="PaylasimId" />
+      <PropertyRef Name="BarkodId" />
+      <PropertyRef Name="KullaniciId" />
+      <PropertyRef Name="MarketId" />
+      <PropertyRef Name="Fiyat" />
+      <PropertyRef Name="Tarih" />
+      <PropertyRef Name="UrunResim" />
+      <PropertyRef Name="KullaniciResim" />
+    </Key>
+    <Property Name="UrunAd" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MarketAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ad" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PaylasimId" Type="Int32" Nullable="false" />
+    <Property Name="BarkodId" Type="Int32" Nullable="false" />
+    <Property Name="KullaniciId" Type="Int32" Nullable="false" />
+    <Property Name="MarketId" Type="Int32" Nullable="false" />
+    <Property Name="Fiyat" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UrunResim" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="KullaniciResim" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_Yorumlar">
+    <Key>
+      <PropertyRef Name="Ad" />
+      <PropertyRef Name="YorumId" />
+      <PropertyRef Name="BarkodId" />
+      <PropertyRef Name="Yorum" />
+      <PropertyRef Name="Tarih" />
+      <PropertyRef Name="KullaniciId" />
+      <PropertyRef Name="Barkod" />
+      <PropertyRef Name="UrunAd" />
+      <PropertyRef Name="EnUcuzFiyat" />
+      <PropertyRef Name="UrunResim" />
+      <PropertyRef Name="KullaniciResim" />
+    </Key>
+    <Property Name="Ad" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="YorumId" Type="Int32" Nullable="false" />
+    <Property Name="BarkodId" Type="Int32" Nullable="false" />
+    <Property Name="Yorum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="KullaniciId" Type="Int32" Nullable="false" />
+    <Property Name="Barkod" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UrunAd" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EnUcuzFiyat" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="UrunResim" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="KullaniciResim" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="veritabaniEnucuzUrunEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="IzmitMahalles" EntityType="Self.IzmitMahalle" />
+    <EntitySet Name="Kullanicilars" EntityType="Self.Kullanicilar" />
+    <EntitySet Name="Marketlers" EntityType="Self.Marketler" />
+    <EntitySet Name="Paylasimlars" EntityType="Self.Paylasimlar" />
+    <EntitySet Name="Urunlers" EntityType="Self.Urunler" />
+    <EntitySet Name="UrunTakips" EntityType="Self.UrunTakip" />
+    <EntitySet Name="Yorumlars" EntityType="Self.Yorumlar" />
+    <EntitySet Name="View_AnasayfaUrunTakipListe" EntityType="Self.View_AnasayfaUrunTakipListe" />
+    <EntitySet Name="View_KullaniciBilgi" EntityType="Self.View_KullaniciBilgi" />
+    <EntitySet Name="View_Marketler" EntityType="Self.View_Marketler" />
+    <EntitySet Name="View_MarketUrunleri" EntityType="Self.View_MarketUrunleri" />
+    <EntitySet Name="View_UrunlerMarketMahalle" EntityType="Self.View_UrunlerMarketMahalle" />
+    <EntitySet Name="View_UrunMalumat" EntityType="Self.View_UrunMalumat" />
+    <EntitySet Name="View_Yorumlar" EntityType="Self.View_Yorumlar" />
+  </EntityContainer>
+</Schema>

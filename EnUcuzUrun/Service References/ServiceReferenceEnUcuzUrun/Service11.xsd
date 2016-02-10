@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfService1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfService1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfKullanicilar">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Kullanicilar" nillable="true" type="tns:Kullanicilar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKullanicilar" nillable="true" type="tns:ArrayOfKullanicilar" />
+  <xs:complexType name="Kullanicilar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KullaniciId" type="xs:int" />
+      <xs:element minOccurs="0" name="KullaniciResim" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MahalleId" type="xs:int" />
+      <xs:element minOccurs="0" name="Onay" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Parola" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sayi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tarih" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Kullanicilar" nillable="true" type="tns:Kullanicilar" />
+  <xs:complexType name="ArrayOfIzmitMahalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IzmitMahalle" nillable="true" type="tns:IzmitMahalle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIzmitMahalle" nillable="true" type="tns:ArrayOfIzmitMahalle" />
+  <xs:complexType name="IzmitMahalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MahalleAdi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MahalleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IzmitMahalle" nillable="true" type="tns:IzmitMahalle" />
+  <xs:complexType name="ArrayOfView_AnasayfaUrunTakipListe">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="View_AnasayfaUrunTakipListe" nillable="true" type="tns:View_AnasayfaUrunTakipListe" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfView_AnasayfaUrunTakipListe" nillable="true" type="tns:ArrayOfView_AnasayfaUrunTakipListe" />
+  <xs:complexType name="View_AnasayfaUrunTakipListe">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Barkod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BarkodId" type="xs:int" />
+      <xs:element minOccurs="0" name="EnUcuzFiyat" type="xs:decimal" />
+      <xs:element minOccurs="0" name="KullaniciId" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketAdi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarketId" type="xs:int" />
+      <xs:element minOccurs="0" name="Takip" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TakipId" type="xs:int" />
+      <xs:element minOccurs="0" name="UrunAd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UrunIlkEkleyen" type="xs:int" />
+      <xs:element minOccurs="0" name="UrunResim" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="View_AnasayfaUrunTakipListe" nillable="true" type="tns:View_AnasayfaUrunTakipListe" />
+  <xs:complexType name="ArrayOfView_UrunMalumat">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="View_UrunMalumat" nillable="true" type="tns:View_UrunMalumat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfView_UrunMalumat" nillable="true" type="tns:ArrayOfView_UrunMalumat" />
+  <xs:complexType name="View_UrunMalumat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BarkodId" type="xs:int" />
+      <xs:element minOccurs="0" name="Fiyat" type="xs:decimal" />
+      <xs:element minOccurs="0" name="KullaniciId" type="xs:int" />
+      <xs:element minOccurs="0" name="KullaniciResim" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarketAdi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarketId" type="xs:int" />
+      <xs:element minOccurs="0" name="PaylasimId" type="xs:int" />
+      <xs:element minOccurs="0" name="Tarih" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UrunAd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UrunResim" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="View_UrunMalumat" nillable="true" type="tns:View_UrunMalumat" />
+  <xs:complexType name="ArrayOfView_Yorumlar">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="View_Yorumlar" nillable="true" type="tns:View_Yorumlar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfView_Yorumlar" nillable="true" type="tns:ArrayOfView_Yorumlar" />
+  <xs:complexType name="View_Yorumlar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Barkod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BarkodId" type="xs:int" />
+      <xs:element minOccurs="0" name="EnUcuzFiyat" type="xs:decimal" />
+      <xs:element minOccurs="0" name="KullaniciId" type="xs:int" />
+      <xs:element minOccurs="0" name="KullaniciResim" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tarih" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UrunAd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UrunResim" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Yorum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YorumId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="View_Yorumlar" nillable="true" type="tns:View_Yorumlar" />
+  <xs:complexType name="ArrayOfView_Marketler">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="View_Marketler" nillable="true" type="tns:View_Marketler" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfView_Marketler" nillable="true" type="tns:ArrayOfView_Marketler" />
+  <xs:complexType name="View_Marketler">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Adres" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MahalleAdi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MahalleId" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketAdi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarketEkleyen" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="View_Marketler" nillable="true" type="tns:View_Marketler" />
+  <xs:complexType name="ArrayOfView_MarketUrunleri">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="View_MarketUrunleri" nillable="true" type="tns:View_MarketUrunleri" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfView_MarketUrunleri" nillable="true" type="tns:ArrayOfView_MarketUrunleri" />
+  <xs:complexType name="View_MarketUrunleri">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Barkod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BarkodId" type="xs:int" />
+      <xs:element minOccurs="0" name="Fiyat" type="xs:decimal" />
+      <xs:element minOccurs="0" name="KullaniciId" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketAdi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarketId" type="xs:int" />
+      <xs:element minOccurs="0" name="PaylasimId" type="xs:int" />
+      <xs:element minOccurs="0" name="Tarih" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UrunAd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UrunResim" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="View_MarketUrunleri" nillable="true" type="tns:View_MarketUrunleri" />
+  <xs:complexType name="Urunler">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Barkod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BarkodId" type="xs:int" />
+      <xs:element minOccurs="0" name="BarkodTur" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnUcuzFiyat" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MarketId" type="xs:int" />
+      <xs:element minOccurs="0" name="UrunAd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UrunIlkEkleyen" type="xs:int" />
+      <xs:element minOccurs="0" name="UrunResim" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Urunler" nillable="true" type="tns:Urunler" />
+  <xs:complexType name="ArrayOfMarketler">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Marketler" nillable="true" type="tns:Marketler" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMarketler" nillable="true" type="tns:ArrayOfMarketler" />
+  <xs:complexType name="Marketler">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Adres" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MahalleId" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketAdi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarketEkleyen" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Marketler" nillable="true" type="tns:Marketler" />
+  <xs:complexType name="ArrayOfView_UrunlerMarketMahalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="View_UrunlerMarketMahalle" nillable="true" type="tns:View_UrunlerMarketMahalle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfView_UrunlerMarketMahalle" nillable="true" type="tns:ArrayOfView_UrunlerMarketMahalle" />
+  <xs:complexType name="View_UrunlerMarketMahalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Barkod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BarkodId" type="xs:int" />
+      <xs:element minOccurs="0" name="EnUcuzFiyat" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MahalleAdi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MahalleId" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketAdi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarketId" type="xs:int" />
+      <xs:element minOccurs="0" name="UrunAd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UrunIlkEkleyen" type="xs:int" />
+      <xs:element minOccurs="0" name="UrunResim" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="View_UrunlerMarketMahalle" nillable="true" type="tns:View_UrunlerMarketMahalle" />
+  <xs:complexType name="ArrayOfUrunler">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Urunler" nillable="true" type="tns:Urunler" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUrunler" nillable="true" type="tns:ArrayOfUrunler" />
+  <xs:complexType name="Yorumlar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BarkodId" type="xs:int" />
+      <xs:element minOccurs="0" name="KullaniciId" type="xs:int" />
+      <xs:element minOccurs="0" name="Tarih" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Yorum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YorumId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Yorumlar" nillable="true" type="tns:Yorumlar" />
+  <xs:complexType name="ArrayOfView_KullaniciBilgi">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="View_KullaniciBilgi" nillable="true" type="tns:View_KullaniciBilgi" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfView_KullaniciBilgi" nillable="true" type="tns:ArrayOfView_KullaniciBilgi" />
+  <xs:complexType name="View_KullaniciBilgi">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KullaniciId" type="xs:int" />
+      <xs:element minOccurs="0" name="KullaniciResim" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MahalleAdi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MahalleId" type="xs:int" />
+      <xs:element minOccurs="0" name="Onay" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="View_KullaniciBilgi" nillable="true" type="tns:View_KullaniciBilgi" />
+</xs:schema>

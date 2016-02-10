@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="veritabaniEnucuzUrunModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="IzmitMahalle">
+    <Key>
+      <PropertyRef Name="MahalleId" />
+    </Key>
+    <Property Name="MahalleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MahalleAdi" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kullanicilar">
+    <Key>
+      <PropertyRef Name="KullaniciId" />
+    </Key>
+    <Property Name="KullaniciId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ad" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Parola" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="Tarih" Type="datetime" Nullable="false" />
+    <Property Name="Onay" Type="bit" Nullable="false" />
+    <Property Name="Sayi" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="MahalleId" Type="int" Nullable="false" />
+    <Property Name="KullaniciResim" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Marketler">
+    <Key>
+      <PropertyRef Name="MarketId" />
+    </Key>
+    <Property Name="MarketId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MarketAdi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MahalleId" Type="int" Nullable="false" />
+    <Property Name="Adres" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="MarketEkleyen" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Paylasimlar">
+    <Key>
+      <PropertyRef Name="PaylasimId" />
+    </Key>
+    <Property Name="PaylasimId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BarkodId" Type="int" Nullable="false" />
+    <Property Name="KullaniciId" Type="int" Nullable="false" />
+    <Property Name="MarketId" Type="int" Nullable="false" />
+    <Property Name="Fiyat" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Tarih" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Urunler">
+    <Key>
+      <PropertyRef Name="BarkodId" />
+    </Key>
+    <Property Name="BarkodId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Barkod" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="UrunAd" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="UrunIlkEkleyen" Type="int" Nullable="false" />
+    <Property Name="EnUcuzFiyat" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="MarketId" Type="int" Nullable="false" />
+    <Property Name="BarkodTur" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="UrunResim" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UrunTakip">
+    <Key>
+      <PropertyRef Name="TakipId" />
+    </Key>
+    <Property Name="TakipId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciId" Type="int" Nullable="false" />
+    <Property Name="BarkodId" Type="int" Nullable="false" />
+    <Property Name="Takip" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Yorumlar">
+    <Key>
+      <PropertyRef Name="YorumId" />
+    </Key>
+    <Property Name="YorumId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BarkodId" Type="int" Nullable="false" />
+    <Property Name="Yorum" Type="varchar(max)" Nullable="false" />
+    <Property Name="Tarih" Type="datetime" Nullable="false" />
+    <Property Name="KullaniciId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'veritabaniEnucuzUrun.dbo.View_AnasayfaUrunTakipListe' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_AnasayfaUrunTakipListe">
+    <Key>
+      <PropertyRef Name="BarkodId" />
+      <PropertyRef Name="KullaniciId" />
+      <PropertyRef Name="Takip" />
+      <PropertyRef Name="TakipId" />
+      <PropertyRef Name="Barkod" />
+      <PropertyRef Name="EnUcuzFiyat" />
+      <PropertyRef Name="UrunAd" />
+      <PropertyRef Name="UrunIlkEkleyen" />
+      <PropertyRef Name="UrunResim" />
+      <PropertyRef Name="MarketId" />
+      <PropertyRef Name="MarketAdi" />
+    </Key>
+    <Property Name="BarkodId" Type="int" Nullable="false" />
+    <Property Name="KullaniciId" Type="int" Nullable="false" />
+    <Property Name="Takip" Type="bit" Nullable="false" />
+    <Property Name="TakipId" Type="int" Nullable="false" />
+    <Property Name="Barkod" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="EnUcuzFiyat" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="UrunAd" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="UrunIlkEkleyen" Type="int" Nullable="false" />
+    <Property Name="UrunResim" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MarketId" Type="int" Nullable="false" />
+    <Property Name="MarketAdi" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'veritabaniEnucuzUrun.dbo.View_KullaniciBilgi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_KullaniciBilgi">
+    <Key>
+      <PropertyRef Name="Ad" />
+      <PropertyRef Name="KullaniciId" />
+      <PropertyRef Name="MahalleId" />
+      <PropertyRef Name="KullaniciResim" />
+      <PropertyRef Name="MahalleAdi" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="Onay" />
+    </Key>
+    <Property Name="Ad" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="KullaniciId" Type="int" Nullable="false" />
+    <Property Name="MahalleId" Type="int" Nullable="false" />
+    <Property Name="KullaniciResim" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MahalleAdi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Onay" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'veritabaniEnucuzUrun.dbo.View_Marketler' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Marketler">
+    <Key>
+      <PropertyRef Name="MahalleAdi" />
+      <PropertyRef Name="MarketId" />
+      <PropertyRef Name="MarketAdi" />
+      <PropertyRef Name="MahalleId" />
+      <PropertyRef Name="Adres" />
+      <PropertyRef Name="MarketEkleyen" />
+    </Key>
+    <Property Name="MahalleAdi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MarketId" Type="int" Nullable="false" />
+    <Property Name="MarketAdi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MahalleId" Type="int" Nullable="false" />
+    <Property Name="Adres" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="MarketEkleyen" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'veritabaniEnucuzUrun.dbo.View_MarketUrunleri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_MarketUrunleri">
+    <Key>
+      <PropertyRef Name="MarketAdi" />
+      <PropertyRef Name="UrunAd" />
+      <PropertyRef Name="PaylasimId" />
+      <PropertyRef Name="BarkodId" />
+      <PropertyRef Name="KullaniciId" />
+      <PropertyRef Name="MarketId" />
+      <PropertyRef Name="Fiyat" />
+      <PropertyRef Name="Tarih" />
+      <PropertyRef Name="Barkod" />
+      <PropertyRef Name="UrunResim" />
+    </Key>
+    <Property Name="MarketAdi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UrunAd" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="PaylasimId" Type="int" Nullable="false" />
+    <Property Name="BarkodId" Type="int" Nullable="false" />
+    <Property Name="KullaniciId" Type="int" Nullable="false" />
+    <Property Name="MarketId" Type="int" Nullable="false" />
+    <Property Name="Fiyat" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Tarih" Type="datetime" Nullable="false" />
+    <Property Name="Barkod" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="UrunResim" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'veritabaniEnucuzUrun.dbo.View_UrunlerMarketMahalle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_UrunlerMarketMahalle">
+    <Key>
+      <PropertyRef Name="BarkodId" />
+      <PropertyRef Name="UrunAd" />
+      <PropertyRef Name="UrunIlkEkleyen" />
+      <PropertyRef Name="EnUcuzFiyat" />
+      <PropertyRef Name="MarketId" />
+      <PropertyRef Name="MarketAdi" />
+      <PropertyRef Name="MahalleAdi" />
+      <PropertyRef Name="MahalleId" />
+      <PropertyRef Name="Barkod" />
+      <PropertyRef Name="UrunResim" />
+    </Key>
+    <Property Name="BarkodId" Type="int" Nullable="false" />
+    <Property Name="UrunAd" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="UrunIlkEkleyen" Type="int" Nullable="false" />
+    <Property Name="EnUcuzFiyat" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="MarketId" Type="int" Nullable="false" />
+    <Property Name="MarketAdi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MahalleAdi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MahalleId" Type="int" Nullable="false" />
+    <Property Name="Barkod" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="UrunResim" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'veritabaniEnucuzUrun.dbo.View_UrunMalumat' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_UrunMalumat">
+    <Key>
+      <PropertyRef Name="UrunAd" />
+      <PropertyRef Name="MarketAdi" />
+      <PropertyRef Name="Ad" />
+      <PropertyRef Name="PaylasimId" />
+      <PropertyRef Name="BarkodId" />
+      <PropertyRef Name="KullaniciId" />
+      <PropertyRef Name="MarketId" />
+      <PropertyRef Name="Fiyat" />
+      <PropertyRef Name="Tarih" />
+      <PropertyRef Name="UrunResim" />
+      <PropertyRef Name="KullaniciResim" />
+    </Key>
+    <Property Name="UrunAd" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="MarketAdi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ad" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="PaylasimId" Type="int" Nullable="false" />
+    <Property Name="BarkodId" Type="int" Nullable="false" />
+    <Property Name="KullaniciId" Type="int" Nullable="false" />
+    <Property Name="MarketId" Type="int" Nullable="false" />
+    <Property Name="Fiyat" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Tarih" Type="datetime" Nullable="false" />
+    <Property Name="UrunResim" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="KullaniciResim" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'veritabaniEnucuzUrun.dbo.View_Yorumlar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Yorumlar">
+    <Key>
+      <PropertyRef Name="Ad" />
+      <PropertyRef Name="YorumId" />
+      <PropertyRef Name="BarkodId" />
+      <PropertyRef Name="Yorum" />
+      <PropertyRef Name="Tarih" />
+      <PropertyRef Name="KullaniciId" />
+      <PropertyRef Name="Barkod" />
+      <PropertyRef Name="UrunAd" />
+      <PropertyRef Name="EnUcuzFiyat" />
+      <PropertyRef Name="UrunResim" />
+      <PropertyRef Name="KullaniciResim" />
+    </Key>
+    <Property Name="Ad" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="YorumId" Type="int" Nullable="false" />
+    <Property Name="BarkodId" Type="int" Nullable="false" />
+    <Property Name="Yorum" Type="varchar(max)" Nullable="false" />
+    <Property Name="Tarih" Type="datetime" Nullable="false" />
+    <Property Name="KullaniciId" Type="int" Nullable="false" />
+    <Property Name="Barkod" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="UrunAd" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="EnUcuzFiyat" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="UrunResim" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="KullaniciResim" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="veritabaniEnucuzUrunModelStoreContainer">
+    <EntitySet Name="IzmitMahalle" EntityType="Self.IzmitMahalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marketler" EntityType="Self.Marketler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Paylasimlar" EntityType="Self.Paylasimlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Urunler" EntityType="Self.Urunler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UrunTakip" EntityType="Self.UrunTakip" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yorumlar" EntityType="Self.Yorumlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="View_AnasayfaUrunTakipListe" EntityType="Self.View_AnasayfaUrunTakipListe" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_AnasayfaUrunTakipListe].[BarkodId] AS [BarkodId], 
+    [View_AnasayfaUrunTakipListe].[KullaniciId] AS [KullaniciId], 
+    [View_AnasayfaUrunTakipListe].[Takip] AS [Takip], 
+    [View_AnasayfaUrunTakipListe].[TakipId] AS [TakipId], 
+    [View_AnasayfaUrunTakipListe].[Barkod] AS [Barkod], 
+    [View_AnasayfaUrunTakipListe].[EnUcuzFiyat] AS [EnUcuzFiyat], 
+    [View_AnasayfaUrunTakipListe].[UrunAd] AS [UrunAd], 
+    [View_AnasayfaUrunTakipListe].[UrunIlkEkleyen] AS [UrunIlkEkleyen], 
+    [View_AnasayfaUrunTakipListe].[UrunResim] AS [UrunResim], 
+    [View_AnasayfaUrunTakipListe].[MarketId] AS [MarketId], 
+    [View_AnasayfaUrunTakipListe].[MarketAdi] AS [MarketAdi]
+    FROM [dbo].[View_AnasayfaUrunTakipListe] AS [View_AnasayfaUrunTakipListe]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_KullaniciBilgi" EntityType="Self.View_KullaniciBilgi" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_KullaniciBilgi].[Ad] AS [Ad], 
+    [View_KullaniciBilgi].[KullaniciId] AS [KullaniciId], 
+    [View_KullaniciBilgi].[MahalleId] AS [MahalleId], 
+    [View_KullaniciBilgi].[KullaniciResim] AS [KullaniciResim], 
+    [View_KullaniciBilgi].[MahalleAdi] AS [MahalleAdi], 
+    [View_KullaniciBilgi].[Email] AS [Email], 
+    [View_KullaniciBilgi].[Onay] AS [Onay]
+    FROM [dbo].[View_KullaniciBilgi] AS [View_KullaniciBilgi]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Marketler" EntityType="Self.View_Marketler" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_Marketler].[MahalleAdi] AS [MahalleAdi], 
+    [View_Marketler].[MarketId] AS [MarketId], 
+    [View_Marketler].[MarketAdi] AS [MarketAdi], 
+    [View_Marketler].[MahalleId] AS [MahalleId], 
+    [View_Marketler].[Adres] AS [Adres], 
+    [View_Marketler].[MarketEkleyen] AS [MarketEkleyen]
+    FROM [dbo].[View_Marketler] AS [View_Marketler]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_MarketUrunleri" EntityType="Self.View_MarketUrunleri" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_MarketUrunleri].[MarketAdi] AS [MarketAdi], 
+    [View_MarketUrunleri].[UrunAd] AS [UrunAd], 
+    [View_MarketUrunleri].[PaylasimId] AS [PaylasimId], 
+    [View_MarketUrunleri].[BarkodId] AS [BarkodId], 
+    [View_MarketUrunleri].[KullaniciId] AS [KullaniciId], 
+    [View_MarketUrunleri].[MarketId] AS [MarketId], 
+    [View_MarketUrunleri].[Fiyat] AS [Fiyat], 
+    [View_MarketUrunleri].[Tarih] AS [Tarih], 
+    [View_MarketUrunleri].[Barkod] AS [Barkod], 
+    [View_MarketUrunleri].[UrunResim] AS [UrunResim]
+    FROM [dbo].[View_MarketUrunleri] AS [View_MarketUrunleri]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_UrunlerMarketMahalle" EntityType="Self.View_UrunlerMarketMahalle" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_UrunlerMarketMahalle].[BarkodId] AS [BarkodId], 
+    [View_UrunlerMarketMahalle].[UrunAd] AS [UrunAd], 
+    [View_UrunlerMarketMahalle].[UrunIlkEkleyen] AS [UrunIlkEkleyen], 
+    [View_UrunlerMarketMahalle].[EnUcuzFiyat] AS [EnUcuzFiyat], 
+    [View_UrunlerMarketMahalle].[MarketId] AS [MarketId], 
+    [View_UrunlerMarketMahalle].[MarketAdi] AS [MarketAdi], 
+    [View_UrunlerMarketMahalle].[MahalleAdi] AS [MahalleAdi], 
+    [View_UrunlerMarketMahalle].[MahalleId] AS [MahalleId], 
+    [View_UrunlerMarketMahalle].[Barkod] AS [Barkod], 
+    [View_UrunlerMarketMahalle].[UrunResim] AS [UrunResim]
+    FROM [dbo].[View_UrunlerMarketMahalle] AS [View_UrunlerMarketMahalle]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_UrunMalumat" EntityType="Self.View_UrunMalumat" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_UrunMalumat].[UrunAd] AS [UrunAd], 
+    [View_UrunMalumat].[MarketAdi] AS [MarketAdi], 
+    [View_UrunMalumat].[Ad] AS [Ad], 
+    [View_UrunMalumat].[PaylasimId] AS [PaylasimId], 
+    [View_UrunMalumat].[BarkodId] AS [BarkodId], 
+    [View_UrunMalumat].[KullaniciId] AS [KullaniciId], 
+    [View_UrunMalumat].[MarketId] AS [MarketId], 
+    [View_UrunMalumat].[Fiyat] AS [Fiyat], 
+    [View_UrunMalumat].[Tarih] AS [Tarih], 
+    [View_UrunMalumat].[UrunResim] AS [UrunResim], 
+    [View_UrunMalumat].[KullaniciResim] AS [KullaniciResim]
+    FROM [dbo].[View_UrunMalumat] AS [View_UrunMalumat]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Yorumlar" EntityType="Self.View_Yorumlar" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_Yorumlar].[Ad] AS [Ad], 
+    [View_Yorumlar].[YorumId] AS [YorumId], 
+    [View_Yorumlar].[BarkodId] AS [BarkodId], 
+    [View_Yorumlar].[Yorum] AS [Yorum], 
+    [View_Yorumlar].[Tarih] AS [Tarih], 
+    [View_Yorumlar].[KullaniciId] AS [KullaniciId], 
+    [View_Yorumlar].[Barkod] AS [Barkod], 
+    [View_Yorumlar].[UrunAd] AS [UrunAd], 
+    [View_Yorumlar].[EnUcuzFiyat] AS [EnUcuzFiyat], 
+    [View_Yorumlar].[UrunResim] AS [UrunResim], 
+    [View_Yorumlar].[KullaniciResim] AS [KullaniciResim]
+    FROM [dbo].[View_Yorumlar] AS [View_Yorumlar]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

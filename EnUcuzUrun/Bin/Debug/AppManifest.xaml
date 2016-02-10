@@ -1,0 +1,9 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="EnUcuzUrun" EntryPointType="EnUcuzUrun.App" RuntimeVersion="6.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="EnUcuzUrun" Source="EnUcuzUrun.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls.Toolkit" Source="Microsoft.Phone.Controls.Toolkit.dll" />
+    <AssemblyPart x:Name="WriteableBitmapExWinPhone" Source="WriteableBitmapExWinPhone.dll" />
+    <AssemblyPart x:Name="WriteableBitmapExWinPhoneXnaDependant" Source="WriteableBitmapExWinPhoneXnaDependant.dll" />
+    <AssemblyPart x:Name="zxing.wp8.0" Source="zxing.wp8.0.dll" />
+  </Deployment.Parts>
+</Deployment>

@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:16530/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService1" />
+  <xs:import schemaLocation="http://localhost:16530/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:import schemaLocation="http://localhost:16530/Service1.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="Listeleme">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListelemeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="ListelemeResult" nillable="true" type="q1:ArrayOfKullanicilar" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Arama">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="isim" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AramaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="AramaResult" nillable="true" type="q2:ArrayOfKullanicilar" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Kaydetme">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="veri" nillable="true" type="q3:Kullanicilar" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KaydetmeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="KaydetmeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Silme">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="veri" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SilmeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GirisEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GirisEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GirisEmailResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GirisOnay">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email_onay" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GirisOnayResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GirisOnayResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GirisParolaKontrol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parola" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GirisParolaKontrolResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GirisParolaKontrolResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AramaEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AramaEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="AramaEmailResult" nillable="true" type="q4:ArrayOfKullanicilar" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KullaniciIdDondur">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KullaniciIdDondurResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="KullaniciIdDondurResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmitMahalleler">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmitMahallelerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="IzmitMahallelerResult" nillable="true" type="q5:ArrayOfIzmitMahalle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MahalleIdDondur">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mahalleadi" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MahalleIdDondurResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MahalleIdDondurResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="anasayfaliste">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="kullaniciid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="anasayfalisteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="anasayfalisteResult" nillable="true" type="q6:ArrayOfView_AnasayfaUrunTakipListe" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UrunBilgi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="barkodid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UrunBilgiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="UrunBilgiResult" nillable="true" type="q7:ArrayOfView_UrunMalumat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="YorumlariGetir">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="barkodid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="YorumlariGetirResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="YorumlariGetirResult" nillable="true" type="q8:ArrayOfView_Yorumlar" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Marketler">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarketlerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="MarketlerResult" nillable="true" type="q9:ArrayOfView_Marketler" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarketUrunleri">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarketId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarketUrunleriResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="MarketUrunleriResult" nillable="true" type="q10:ArrayOfView_MarketUrunleri" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProfilPaylasimlar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="kullaniciid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProfilPaylasimlarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="ProfilPaylasimlarResult" nillable="true" type="q11:ArrayOfView_UrunMalumat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProfilMarketlerim">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="kullaniciid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProfilMarketlerimResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="ProfilMarketlerimResult" nillable="true" type="q12:ArrayOfView_Marketler" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BarkodVarMi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="barkodid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BarkodVarMiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="BarkodVarMiResult" type="q13:KeyValuePairOfbooleanUrunlerDS5ry77x" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarketlerListeUrunKaydet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mahalleid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarketlerListeUrunKaydetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="MarketlerListeUrunKaydetResult" nillable="true" type="q14:ArrayOfMarketler" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarketKayit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="veri" nillable="true" type="q15:Marketler" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarketKayitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarketKayitResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UrunlerKayit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="urunler" nillable="true" type="q16:Urunler" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UrunlerKayitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="UrunlerKayitResult" type="q17:KeyValuePairOfbooleanstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnUcuz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="barkodid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnUcuzResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EnUcuzResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnUcuzListeDondur">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnUcuzListeDondurResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="EnUcuzListeDondurResult" nillable="true" type="q18:ArrayOfView_UrunlerMarketMahalle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UrunArama">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="urunad" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UrunAramaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="UrunAramaResult" nillable="true" type="q19:ArrayOfUrunler" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarketArama">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="marketad" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MarketAramaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="MarketAramaResult" nillable="true" type="q20:ArrayOfView_Marketler" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KullaniciOnayGüncelle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="onay" type="xs:boolean" />
+        <xs:element minOccurs="0" name="kullaniciid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KullaniciOnayGüncelleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MArketAdGüncelle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="marketad" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="marketid" type="xs:int" />
+        <xs:element minOccurs="0" name="adres" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MArketAdGüncelleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Urunler">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UrunlerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="UrunlerResult" nillable="true" type="q21:ArrayOfUrunler" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UrunAdGuncelle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="urunid" type="xs:int" />
+        <xs:element minOccurs="0" name="urunad" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UrunAdGuncelleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="YorumKayit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="yorum" nillable="true" type="q22:Yorumlar" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="YorumKayitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="YorumKayitResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KullaniciKayit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="kullanici" nillable="true" type="q23:Kullanicilar" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KullaniciKayitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="KullaniciKayitResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmailVarMı">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmailVarMıResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EmailVarMıResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KullaniciAdDondur">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KullaniciAdDondurResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="KullaniciAdDondurResult" nillable="true" type="q24:ArrayOfView_KullaniciBilgi" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaylasimSil">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paylasimid" type="xs:int" />
+        <xs:element minOccurs="0" name="barkodid" type="xs:int" />
+        <xs:element minOccurs="0" name="fiyat" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaylasimSilResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PaylasimSilResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaylasimGuncelle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paylasimid" type="xs:int" />
+        <xs:element minOccurs="0" name="fiyat" type="xs:decimal" />
+        <xs:element minOccurs="0" name="tarih" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="barkodid" type="xs:int" />
+        <xs:element minOccurs="0" name="eskifiyat" type="xs:decimal" />
+        <xs:element minOccurs="0" name="marketid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaylasimGuncelleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PaylasimGuncelleResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UrunlerEnUcuzuGir">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="barkod" type="xs:int" />
+        <xs:element minOccurs="0" name="fiyat" type="xs:decimal" />
+        <xs:element minOccurs="0" name="marketid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UrunlerEnUcuzuGirResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UrunlerEnUcuzuGirResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uyelikmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uyelikmailResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uyelikonaylama">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sayi" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uyelikonaylamaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uyelikonaylamaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sifremiunuttum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sifremiunuttumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sifremiunuttumResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaylasimUrunTakipKayit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="barkodId" type="xs:int" />
+        <xs:element minOccurs="0" name="ucret" type="xs:decimal" />
+        <xs:element minOccurs="0" name="marketId" type="xs:int" />
+        <xs:element minOccurs="0" name="kullaniciid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PaylasimUrunTakipKayitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PaylasimUrunTakipKayitResult" nillable="true" type="q25:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="buffer" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="blobName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="containerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadImageResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="blobName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="containerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadImageResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TakipEdilenUrunImages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="containerName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="blobName" nillable="true" type="q26:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TakipEdilenUrunImagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TakipEdilenUrunImagesResult" nillable="true" type="q27:ArrayOfbase64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

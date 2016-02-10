@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:16530/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:16530/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:16530/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService1" />
+      <xsd:import schemaLocation="http://localhost:16530/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+      <xsd:import schemaLocation="http://localhost:16530/Service1.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_Listeleme_InputMessage">
+    <wsdl:part name="parameters" element="tns:Listeleme" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Listeleme_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListelemeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Arama_InputMessage">
+    <wsdl:part name="parameters" element="tns:Arama" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Arama_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AramaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Kaydetme_InputMessage">
+    <wsdl:part name="parameters" element="tns:Kaydetme" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Kaydetme_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KaydetmeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Silme_InputMessage">
+    <wsdl:part name="parameters" element="tns:Silme" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Silme_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SilmeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GirisEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GirisEmail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GirisEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GirisEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GirisOnay_InputMessage">
+    <wsdl:part name="parameters" element="tns:GirisOnay" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GirisOnay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GirisOnayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GirisParolaKontrol_InputMessage">
+    <wsdl:part name="parameters" element="tns:GirisParolaKontrol" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GirisParolaKontrol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GirisParolaKontrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AramaEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:AramaEmail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AramaEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AramaEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_KullaniciIdDondur_InputMessage">
+    <wsdl:part name="parameters" element="tns:KullaniciIdDondur" />
+  </wsdl:message>
+  <wsdl:message name="IService1_KullaniciIdDondur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KullaniciIdDondurResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IzmitMahalleler_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmitMahalleler" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IzmitMahalleler_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmitMahallelerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MahalleIdDondur_InputMessage">
+    <wsdl:part name="parameters" element="tns:MahalleIdDondur" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MahalleIdDondur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MahalleIdDondurResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_anasayfaliste_InputMessage">
+    <wsdl:part name="parameters" element="tns:anasayfaliste" />
+  </wsdl:message>
+  <wsdl:message name="IService1_anasayfaliste_OutputMessage">
+    <wsdl:part name="parameters" element="tns:anasayfalisteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UrunBilgi_InputMessage">
+    <wsdl:part name="parameters" element="tns:UrunBilgi" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UrunBilgi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UrunBilgiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_YorumlariGetir_InputMessage">
+    <wsdl:part name="parameters" element="tns:YorumlariGetir" />
+  </wsdl:message>
+  <wsdl:message name="IService1_YorumlariGetir_OutputMessage">
+    <wsdl:part name="parameters" element="tns:YorumlariGetirResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Marketler_InputMessage">
+    <wsdl:part name="parameters" element="tns:Marketler" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Marketler_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarketlerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MarketUrunleri_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarketUrunleri" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MarketUrunleri_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarketUrunleriResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ProfilPaylasimlar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProfilPaylasimlar" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ProfilPaylasimlar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProfilPaylasimlarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ProfilMarketlerim_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProfilMarketlerim" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ProfilMarketlerim_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProfilMarketlerimResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BarkodVarMi_InputMessage">
+    <wsdl:part name="parameters" element="tns:BarkodVarMi" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BarkodVarMi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BarkodVarMiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MarketlerListeUrunKaydet_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarketlerListeUrunKaydet" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MarketlerListeUrunKaydet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarketlerListeUrunKaydetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MarketKayit_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarketKayit" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MarketKayit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarketKayitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UrunlerKayit_InputMessage">
+    <wsdl:part name="parameters" element="tns:UrunlerKayit" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UrunlerKayit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UrunlerKayitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EnUcuz_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnUcuz" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EnUcuz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnUcuzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EnUcuzListeDondur_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnUcuzListeDondur" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EnUcuzListeDondur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnUcuzListeDondurResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UrunArama_InputMessage">
+    <wsdl:part name="parameters" element="tns:UrunArama" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UrunArama_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UrunAramaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MarketArama_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarketArama" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MarketArama_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarketAramaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_KullaniciOnayGüncelle_InputMessage">
+    <wsdl:part name="parameters" element="tns:KullaniciOnayGüncelle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_KullaniciOnayGüncelle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KullaniciOnayGüncelleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MArketAdGüncelle_InputMessage">
+    <wsdl:part name="parameters" element="tns:MArketAdGüncelle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MArketAdGüncelle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MArketAdGüncelleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Urunler_InputMessage">
+    <wsdl:part name="parameters" element="tns:Urunler" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Urunler_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UrunlerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UrunAdGuncelle_InputMessage">
+    <wsdl:part name="parameters" element="tns:UrunAdGuncelle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UrunAdGuncelle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UrunAdGuncelleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_YorumKayit_InputMessage">
+    <wsdl:part name="parameters" element="tns:YorumKayit" />
+  </wsdl:message>
+  <wsdl:message name="IService1_YorumKayit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:YorumKayitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_KullaniciKayit_InputMessage">
+    <wsdl:part name="parameters" element="tns:KullaniciKayit" />
+  </wsdl:message>
+  <wsdl:message name="IService1_KullaniciKayit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KullaniciKayitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EmailVarMı_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmailVarMı" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EmailVarMı_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmailVarMıResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_KullaniciAdDondur_InputMessage">
+    <wsdl:part name="parameters" element="tns:KullaniciAdDondur" />
+  </wsdl:message>
+  <wsdl:message name="IService1_KullaniciAdDondur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KullaniciAdDondurResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PaylasimSil_InputMessage">
+    <wsdl:part name="parameters" element="tns:PaylasimSil" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PaylasimSil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PaylasimSilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PaylasimGuncelle_InputMessage">
+    <wsdl:part name="parameters" element="tns:PaylasimGuncelle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PaylasimGuncelle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PaylasimGuncelleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UrunlerEnUcuzuGir_InputMessage">
+    <wsdl:part name="parameters" element="tns:UrunlerEnUcuzuGir" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UrunlerEnUcuzuGir_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UrunlerEnUcuzuGirResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_uyelikmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:uyelikmail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_uyelikmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:uyelikmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_uyelikonaylama_InputMessage">
+    <wsdl:part name="parameters" element="tns:uyelikonaylama" />
+  </wsdl:message>
+  <wsdl:message name="IService1_uyelikonaylama_OutputMessage">
+    <wsdl:part name="parameters" element="tns:uyelikonaylamaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sifremiunuttum_InputMessage">
+    <wsdl:part name="parameters" element="tns:sifremiunuttum" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sifremiunuttum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sifremiunuttumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PaylasimUrunTakipKayit_InputMessage">
+    <wsdl:part name="parameters" element="tns:PaylasimUrunTakipKayit" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PaylasimUrunTakipKayit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PaylasimUrunTakipKayitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UploadImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadImage" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UploadImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DownloadImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadImage" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DownloadImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TakipEdilenUrunImages_InputMessage">
+    <wsdl:part name="parameters" element="tns:TakipEdilenUrunImages" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TakipEdilenUrunImages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TakipEdilenUrunImagesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="Listeleme">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Listeleme" message="tns:IService1_Listeleme_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListelemeResponse" message="tns:IService1_Listeleme_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Arama">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Arama" message="tns:IService1_Arama_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AramaResponse" message="tns:IService1_Arama_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Kaydetme">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Kaydetme" message="tns:IService1_Kaydetme_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/KaydetmeResponse" message="tns:IService1_Kaydetme_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Silme">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Silme" message="tns:IService1_Silme_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SilmeResponse" message="tns:IService1_Silme_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GirisEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GirisEmail" message="tns:IService1_GirisEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GirisEmailResponse" message="tns:IService1_GirisEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GirisOnay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GirisOnay" message="tns:IService1_GirisOnay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GirisOnayResponse" message="tns:IService1_GirisOnay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GirisParolaKontrol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GirisParolaKontrol" message="tns:IService1_GirisParolaKontrol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GirisParolaKontrolResponse" message="tns:IService1_GirisParolaKontrol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AramaEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AramaEmail" message="tns:IService1_AramaEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AramaEmailResponse" message="tns:IService1_AramaEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KullaniciIdDondur">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/KullaniciIdDondur" message="tns:IService1_KullaniciIdDondur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/KullaniciIdDondurResponse" message="tns:IService1_KullaniciIdDondur_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmitMahalleler">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IzmitMahalleler" message="tns:IService1_IzmitMahalleler_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IzmitMahallelerResponse" message="tns:IService1_IzmitMahalleler_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MahalleIdDondur">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MahalleIdDondur" message="tns:IService1_MahalleIdDondur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MahalleIdDondurResponse" message="tns:IService1_MahalleIdDondur_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="anasayfaliste">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/anasayfaliste" message="tns:IService1_anasayfaliste_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/anasayfalisteResponse" message="tns:IService1_anasayfaliste_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UrunBilgi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UrunBilgi" message="tns:IService1_UrunBilgi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UrunBilgiResponse" message="tns:IService1_UrunBilgi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="YorumlariGetir">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/YorumlariGetir" message="tns:IService1_YorumlariGetir_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/YorumlariGetirResponse" message="tns:IService1_YorumlariGetir_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Marketler">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Marketler" message="tns:IService1_Marketler_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MarketlerResponse" message="tns:IService1_Marketler_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarketUrunleri">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MarketUrunleri" message="tns:IService1_MarketUrunleri_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MarketUrunleriResponse" message="tns:IService1_MarketUrunleri_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProfilPaylasimlar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ProfilPaylasimlar" message="tns:IService1_ProfilPaylasimlar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ProfilPaylasimlarResponse" message="tns:IService1_ProfilPaylasimlar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProfilMarketlerim">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ProfilMarketlerim" message="tns:IService1_ProfilMarketlerim_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ProfilMarketlerimResponse" message="tns:IService1_ProfilMarketlerim_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BarkodVarMi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/BarkodVarMi" message="tns:IService1_BarkodVarMi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/BarkodVarMiResponse" message="tns:IService1_BarkodVarMi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarketlerListeUrunKaydet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MarketlerListeUrunKaydet" message="tns:IService1_MarketlerListeUrunKaydet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MarketlerListeUrunKaydetResponse" message="tns:IService1_MarketlerListeUrunKaydet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarketKayit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MarketKayit" message="tns:IService1_MarketKayit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MarketKayitResponse" message="tns:IService1_MarketKayit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UrunlerKayit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UrunlerKayit" message="tns:IService1_UrunlerKayit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UrunlerKayitResponse" message="tns:IService1_UrunlerKayit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnUcuz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EnUcuz" message="tns:IService1_EnUcuz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EnUcuzResponse" message="tns:IService1_EnUcuz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnUcuzListeDondur">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EnUcuzListeDondur" message="tns:IService1_EnUcuzListeDondur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EnUcuzListeDondurResponse" message="tns:IService1_EnUcuzListeDondur_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UrunArama">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UrunArama" message="tns:IService1_UrunArama_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UrunAramaResponse" message="tns:IService1_UrunArama_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarketArama">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MarketArama" message="tns:IService1_MarketArama_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MarketAramaResponse" message="tns:IService1_MarketArama_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KullaniciOnayGüncelle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/KullaniciOnayGüncelle" message="tns:IService1_KullaniciOnayGüncelle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/KullaniciOnayGüncelleResponse" message="tns:IService1_KullaniciOnayGüncelle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MArketAdGüncelle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MArketAdGüncelle" message="tns:IService1_MArketAdGüncelle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MArketAdGüncelleResponse" message="tns:IService1_MArketAdGüncelle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Urunler">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Urunler" message="tns:IService1_Urunler_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UrunlerResponse" message="tns:IService1_Urunler_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UrunAdGuncelle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UrunAdGuncelle" message="tns:IService1_UrunAdGuncelle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UrunAdGuncelleResponse" message="tns:IService1_UrunAdGuncelle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="YorumKayit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/YorumKayit" message="tns:IService1_YorumKayit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/YorumKayitResponse" message="tns:IService1_YorumKayit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KullaniciKayit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/KullaniciKayit" message="tns:IService1_KullaniciKayit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/KullaniciKayitResponse" message="tns:IService1_KullaniciKayit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmailVarMı">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EmailVarMı" message="tns:IService1_EmailVarMı_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EmailVarMıResponse" message="tns:IService1_EmailVarMı_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KullaniciAdDondur">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/KullaniciAdDondur" message="tns:IService1_KullaniciAdDondur_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/KullaniciAdDondurResponse" message="tns:IService1_KullaniciAdDondur_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PaylasimSil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PaylasimSil" message="tns:IService1_PaylasimSil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PaylasimSilResponse" message="tns:IService1_PaylasimSil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PaylasimGuncelle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PaylasimGuncelle" message="tns:IService1_PaylasimGuncelle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PaylasimGuncelleResponse" message="tns:IService1_PaylasimGuncelle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UrunlerEnUcuzuGir">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UrunlerEnUcuzuGir" message="tns:IService1_UrunlerEnUcuzuGir_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UrunlerEnUcuzuGirResponse" message="tns:IService1_UrunlerEnUcuzuGir_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="uyelikmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/uyelikmail" message="tns:IService1_uyelikmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/uyelikmailResponse" message="tns:IService1_uyelikmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="uyelikonaylama">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/uyelikonaylama" message="tns:IService1_uyelikonaylama_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/uyelikonaylamaResponse" message="tns:IService1_uyelikonaylama_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sifremiunuttum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sifremiunuttum" message="tns:IService1_sifremiunuttum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sifremiunuttumResponse" message="tns:IService1_sifremiunuttum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PaylasimUrunTakipKayit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PaylasimUrunTakipKayit" message="tns:IService1_PaylasimUrunTakipKayit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PaylasimUrunTakipKayitResponse" message="tns:IService1_PaylasimUrunTakipKayit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UploadImage" message="tns:IService1_UploadImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UploadImageResponse" message="tns:IService1_UploadImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DownloadImage" message="tns:IService1_DownloadImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DownloadImageResponse" message="tns:IService1_DownloadImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TakipEdilenUrunImages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TakipEdilenUrunImages" message="tns:IService1_TakipEdilenUrunImages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TakipEdilenUrunImagesResponse" message="tns:IService1_TakipEdilenUrunImages_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Listeleme">
+      <soap:operation soapAction="http://tempuri.org/IService1/Listeleme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Arama">
+      <soap:operation soapAction="http://tempuri.org/IService1/Arama" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Kaydetme">
+      <soap:operation soapAction="http://tempuri.org/IService1/Kaydetme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Silme">
+      <soap:operation soapAction="http://tempuri.org/IService1/Silme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GirisEmail">
+      <soap:operation soapAction="http://tempuri.org/IService1/GirisEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GirisOnay">
+      <soap:operation soapAction="http://tempuri.org/IService1/GirisOnay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GirisParolaKontrol">
+      <soap:operation soapAction="http://tempuri.org/IService1/GirisParolaKontrol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AramaEmail">
+      <soap:operation soapAction="http://tempuri.org/IService1/AramaEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KullaniciIdDondur">
+      <soap:operation soapAction="http://tempuri.org/IService1/KullaniciIdDondur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmitMahalleler">
+      <soap:operation soapAction="http://tempuri.org/IService1/IzmitMahalleler" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MahalleIdDondur">
+      <soap:operation soapAction="http://tempuri.org/IService1/MahalleIdDondur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="anasayfaliste">
+      <soap:operation soapAction="http://tempuri.org/IService1/anasayfaliste" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrunBilgi">
+      <soap:operation soapAction="http://tempuri.org/IService1/UrunBilgi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YorumlariGetir">
+      <soap:operation soapAction="http://tempuri.org/IService1/YorumlariGetir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Marketler">
+      <soap:operation soapAction="http://tempuri.org/IService1/Marketler" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarketUrunleri">
+      <soap:operation soapAction="http://tempuri.org/IService1/MarketUrunleri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProfilPaylasimlar">
+      <soap:operation soapAction="http://tempuri.org/IService1/ProfilPaylasimlar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProfilMarketlerim">
+      <soap:operation soapAction="http://tempuri.org/IService1/ProfilMarketlerim" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BarkodVarMi">
+      <soap:operation soapAction="http://tempuri.org/IService1/BarkodVarMi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarketlerListeUrunKaydet">
+      <soap:operation soapAction="http://tempuri.org/IService1/MarketlerListeUrunKaydet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarketKayit">
+      <soap:operation soapAction="http://tempuri.org/IService1/MarketKayit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrunlerKayit">
+      <soap:operation soapAction="http://tempuri.org/IService1/UrunlerKayit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnUcuz">
+      <soap:operation soapAction="http://tempuri.org/IService1/EnUcuz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnUcuzListeDondur">
+      <soap:operation soapAction="http://tempuri.org/IService1/EnUcuzListeDondur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrunArama">
+      <soap:operation soapAction="http://tempuri.org/IService1/UrunArama" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarketArama">
+      <soap:operation soapAction="http://tempuri.org/IService1/MarketArama" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KullaniciOnayGüncelle">
+      <soap:operation soapAction="http://tempuri.org/IService1/KullaniciOnayGüncelle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MArketAdGüncelle">
+      <soap:operation soapAction="http://tempuri.org/IService1/MArketAdGüncelle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Urunler">
+      <soap:operation soapAction="http://tempuri.org/IService1/Urunler" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrunAdGuncelle">
+      <soap:operation soapAction="http://tempuri.org/IService1/UrunAdGuncelle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YorumKayit">
+      <soap:operation soapAction="http://tempuri.org/IService1/YorumKayit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KullaniciKayit">
+      <soap:operation soapAction="http://tempuri.org/IService1/KullaniciKayit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmailVarMı">
+      <soap:operation soapAction="http://tempuri.org/IService1/EmailVarMı" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KullaniciAdDondur">
+      <soap:operation soapAction="http://tempuri.org/IService1/KullaniciAdDondur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaylasimSil">
+      <soap:operation soapAction="http://tempuri.org/IService1/PaylasimSil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaylasimGuncelle">
+      <soap:operation soapAction="http://tempuri.org/IService1/PaylasimGuncelle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrunlerEnUcuzuGir">
+      <soap:operation soapAction="http://tempuri.org/IService1/UrunlerEnUcuzuGir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uyelikmail">
+      <soap:operation soapAction="http://tempuri.org/IService1/uyelikmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uyelikonaylama">
+      <soap:operation soapAction="http://tempuri.org/IService1/uyelikonaylama" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sifremiunuttum">
+      <soap:operation soapAction="http://tempuri.org/IService1/sifremiunuttum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaylasimUrunTakipKayit">
+      <soap:operation soapAction="http://tempuri.org/IService1/PaylasimUrunTakipKayit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadImage">
+      <soap:operation soapAction="http://tempuri.org/IService1/UploadImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadImage">
+      <soap:operation soapAction="http://tempuri.org/IService1/DownloadImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TakipEdilenUrunImages">
+      <soap:operation soapAction="http://tempuri.org/IService1/TakipEdilenUrunImages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:16530/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

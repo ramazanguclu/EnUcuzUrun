@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="veritabaniEnucuzUrunModelStoreContainer" CdmEntityContainer="veritabaniEnucuzUrunEntities">
+    <EntitySetMapping Name="IzmitMahalles">
+      <EntityTypeMapping TypeName="veritabaniEnucuzUrunModel.IzmitMahalle">
+        <MappingFragment StoreEntitySet="IzmitMahalle">
+          <ScalarProperty Name="MahalleId" ColumnName="MahalleId" />
+          <ScalarProperty Name="MahalleAdi" ColumnName="MahalleAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanicilars">
+      <EntityTypeMapping TypeName="veritabaniEnucuzUrunModel.Kullanicilar">
+        <MappingFragment StoreEntitySet="Kullanicilar">
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Parola" ColumnName="Parola" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Onay" ColumnName="Onay" />
+          <ScalarProperty Name="Sayi" ColumnName="Sayi" />
+          <ScalarProperty Name="MahalleId" ColumnName="MahalleId" />
+          <ScalarProperty Name="KullaniciResim" ColumnName="KullaniciResim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marketlers">
+      <EntityTypeMapping TypeName="veritabaniEnucuzUrunModel.Marketler">
+        <MappingFragment StoreEntitySet="Marketler">
+          <ScalarProperty Name="MarketId" ColumnName="MarketId" />
+          <ScalarProperty Name="MarketAdi" ColumnName="MarketAdi" />
+          <ScalarProperty Name="MahalleId" ColumnName="MahalleId" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="MarketEkleyen" ColumnName="MarketEkleyen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paylasimlars">
+      <EntityTypeMapping TypeName="veritabaniEnucuzUrunModel.Paylasimlar">
+        <MappingFragment StoreEntitySet="Paylasimlar">
+          <ScalarProperty Name="PaylasimId" ColumnName="PaylasimId" />
+          <ScalarProperty Name="BarkodId" ColumnName="BarkodId" />
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+          <ScalarProperty Name="MarketId" ColumnName="MarketId" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Urunlers">
+      <EntityTypeMapping TypeName="veritabaniEnucuzUrunModel.Urunler">
+        <MappingFragment StoreEntitySet="Urunler">
+          <ScalarProperty Name="BarkodId" ColumnName="BarkodId" />
+          <ScalarProperty Name="Barkod" ColumnName="Barkod" />
+          <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
+          <ScalarProperty Name="UrunIlkEkleyen" ColumnName="UrunIlkEkleyen" />
+          <ScalarProperty Name="EnUcuzFiyat" ColumnName="EnUcuzFiyat" />
+          <ScalarProperty Name="MarketId" ColumnName="MarketId" />
+          <ScalarProperty Name="BarkodTur" ColumnName="BarkodTur" />
+          <ScalarProperty Name="UrunResim" ColumnName="UrunResim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UrunTakips">
+      <EntityTypeMapping TypeName="veritabaniEnucuzUrunModel.UrunTakip">
+        <MappingFragment StoreEntitySet="UrunTakip">
+          <ScalarProperty Name="TakipId" ColumnName="TakipId" />
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+          <ScalarProperty Name="BarkodId" ColumnName="BarkodId" />
+          <ScalarProperty Name="Takip" ColumnName="Takip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yorumlars">
+      <EntityTypeMapping TypeName="veritabaniEnucuzUrunModel.Yorumlar">
+        <MappingFragment StoreEntitySet="Yorumlar">
+          <ScalarProperty Name="YorumId" ColumnName="YorumId" />
+          <ScalarProperty Name="BarkodId" ColumnName="BarkodId" />
+          <ScalarProperty Name="Yorum" ColumnName="Yorum" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_AnasayfaUrunTakipListe">
+      <EntityTypeMapping TypeName="veritabaniEnucuzUrunModel.View_AnasayfaUrunTakipListe">
+        <MappingFragment StoreEntitySet="View_AnasayfaUrunTakipListe">
+          <ScalarProperty Name="BarkodId" ColumnName="BarkodId" />
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+          <ScalarProperty Name="Takip" ColumnName="Takip" />
+          <ScalarProperty Name="TakipId" ColumnName="TakipId" />
+          <ScalarProperty Name="Barkod" ColumnName="Barkod" />
+          <ScalarProperty Name="EnUcuzFiyat" ColumnName="EnUcuzFiyat" />
+          <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
+          <ScalarProperty Name="UrunIlkEkleyen" ColumnName="UrunIlkEkleyen" />
+          <ScalarProperty Name="UrunResim" ColumnName="UrunResim" />
+          <ScalarProperty Name="MarketId" ColumnName="MarketId" />
+          <ScalarProperty Name="MarketAdi" ColumnName="MarketAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_KullaniciBilgi">
+      <EntityTypeMapping TypeName="veritabaniEnucuzUrunModel.View_KullaniciBilgi">
+        <MappingFragment StoreEntitySet="View_KullaniciBilgi">
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+          <ScalarProperty Name="MahalleId" ColumnName="MahalleId" />
+          <ScalarProperty Name="KullaniciResim" ColumnName="KullaniciResim" />
+          <ScalarProperty Name="MahalleAdi" ColumnName="MahalleAdi" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Onay" ColumnName="Onay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Marketler">
+      <EntityTypeMapping TypeName="veritabaniEnucuzUrunModel.View_Marketler">
+        <MappingFragment StoreEntitySet="View_Marketler">
+          <ScalarProperty Name="MahalleAdi" ColumnName="MahalleAdi" />
+          <ScalarProperty Name="MarketId" ColumnName="MarketId" />
+          <ScalarProperty Name="MarketAdi" ColumnName="MarketAdi" />
+          <ScalarProperty Name="MahalleId" ColumnName="MahalleId" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="MarketEkleyen" ColumnName="MarketEkleyen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_MarketUrunleri">
+      <EntityTypeMapping TypeName="veritabaniEnucuzUrunModel.View_MarketUrunleri">
+        <MappingFragment StoreEntitySet="View_MarketUrunleri">
+          <ScalarProperty Name="MarketAdi" ColumnName="MarketAdi" />
+          <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
+          <ScalarProperty Name="PaylasimId" ColumnName="PaylasimId" />
+          <ScalarProperty Name="BarkodId" ColumnName="BarkodId" />
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+          <ScalarProperty Name="MarketId" ColumnName="MarketId" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Barkod" ColumnName="Barkod" />
+          <ScalarProperty Name="UrunResim" ColumnName="UrunResim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_UrunlerMarketMahalle">
+      <EntityTypeMapping TypeName="veritabaniEnucuzUrunModel.View_UrunlerMarketMahalle">
+        <MappingFragment StoreEntitySet="View_UrunlerMarketMahalle">
+          <ScalarProperty Name="BarkodId" ColumnName="BarkodId" />
+          <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
+          <ScalarProperty Name="UrunIlkEkleyen" ColumnName="UrunIlkEkleyen" />
+          <ScalarProperty Name="EnUcuzFiyat" ColumnName="EnUcuzFiyat" />
+          <ScalarProperty Name="MarketId" ColumnName="MarketId" />
+          <ScalarProperty Name="MarketAdi" ColumnName="MarketAdi" />
+          <ScalarProperty Name="MahalleAdi" ColumnName="MahalleAdi" />
+          <ScalarProperty Name="MahalleId" ColumnName="MahalleId" />
+          <ScalarProperty Name="Barkod" ColumnName="Barkod" />
+          <ScalarProperty Name="UrunResim" ColumnName="UrunResim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_UrunMalumat">
+      <EntityTypeMapping TypeName="veritabaniEnucuzUrunModel.View_UrunMalumat">
+        <MappingFragment StoreEntitySet="View_UrunMalumat">
+          <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
+          <ScalarProperty Name="MarketAdi" ColumnName="MarketAdi" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="PaylasimId" ColumnName="PaylasimId" />
+          <ScalarProperty Name="BarkodId" ColumnName="BarkodId" />
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+          <ScalarProperty Name="MarketId" ColumnName="MarketId" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="UrunResim" ColumnName="UrunResim" />
+          <ScalarProperty Name="KullaniciResim" ColumnName="KullaniciResim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Yorumlar">
+      <EntityTypeMapping TypeName="veritabaniEnucuzUrunModel.View_Yorumlar">
+        <MappingFragment StoreEntitySet="View_Yorumlar">
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="YorumId" ColumnName="YorumId" />
+          <ScalarProperty Name="BarkodId" ColumnName="BarkodId" />
+          <ScalarProperty Name="Yorum" ColumnName="Yorum" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+          <ScalarProperty Name="Barkod" ColumnName="Barkod" />
+          <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
+          <ScalarProperty Name="EnUcuzFiyat" ColumnName="EnUcuzFiyat" />
+          <ScalarProperty Name="UrunResim" ColumnName="UrunResim" />
+          <ScalarProperty Name="KullaniciResim" ColumnName="KullaniciResim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
