@@ -416,7 +416,7 @@ namespace WcfService1
             msg.Body = "<a>Üyelik Onay Kodunuz = " + veri + " </a>";//mailin içeriği
 
             SmtpClient smp = new SmtpClient();
-            smp.Credentials = new NetworkCredential("hcrb_4321@hotmail.com", "1526**Rg");//kullanıcı adı şifre
+            smp.Credentials = new NetworkCredential("hcrb_4321@hotmail.com", "*******");//kullanıcı adı şifre
             smp.Port = 587;
             smp.Host = "smtp.live.com";//gmail üzerinden gönderiliyor.
             smp.EnableSsl = true;
@@ -461,7 +461,7 @@ namespace WcfService1
                 msg.Body = "<a>Parolanız = " + parola + " </a>";//mailin içeriği
 
                 SmtpClient smp = new SmtpClient();
-                smp.Credentials = new NetworkCredential("izmitenucuzurun@gmail.com", "1526**Rg");//kullanıcı adı şifre
+                smp.Credentials = new NetworkCredential("izmitenucuzurun@gmail.com", "*******");//kullanıcı adı şifre
                 smp.Port = 587;
                 smp.Host = "smtp.gmail.com";//gmail üzerinden gönderiliyor.
                 smp.EnableSsl = true;
